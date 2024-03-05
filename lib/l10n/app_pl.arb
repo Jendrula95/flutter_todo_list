@@ -2,5 +2,11 @@
   "helloWorld": "Witaj Świecie!",
   "@helloWorld": {
     "description": "Powitanie"
-  }
+  },
+  "nText": "{count, plural, =1{Byłem pierwszy!} =2{Byłem drugi!} other{Przegrałem}}",
+ "@nText": {
+   "placeholders": {
+        "count":{}
+      }
+    }
 }

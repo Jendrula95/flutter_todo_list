@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_todo_list/data/list_of_tasks.dart';
+import 'package:flutter_todo_list/view/my_list_tile.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,20 +21,24 @@ class MyApp extends StatelessWidget {
       title: 'Localizations Sample App',
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      home: const FirstWidget(),
+      home: FirstWidget(),
     );
   }
 }
 
 class FirstWidget extends StatelessWidget {
-  const FirstWidget({super.key});
+  FirstWidget({Key? key}) : super(key: key);
+
+  bool checkboxValue = false;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Text(AppLocalizations.of(context)!.helloWorld,
-            style: TextStyle(color: Colors.red, fontSize: 50)),
+      body: ListView.builder(
+        itemCount: 3,
+        itemBuilder: (context, index) => MyListTile(
+          task: listOfTask[index],
+        ),
       ),
     );
   }

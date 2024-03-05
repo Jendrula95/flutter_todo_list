@@ -2,5 +2,13 @@
   "helloWorld": "Hello World!",
   "@helloWorld": {
     "description": "The conventional newborn programmer greeting"
+  },
+"nText": "{count, plural, =1{I was first!} =2{I was second!} other{I lose}}",
+ "@nText": {
+   "placeholders": {
+      
+        "count":{}
+      }
+    }
   }
-}
+
